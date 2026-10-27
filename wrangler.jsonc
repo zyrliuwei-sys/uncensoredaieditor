@@ -11,6 +11,11 @@
   "observability": {
     "enabled": true,
   },
+  // Apex is bound too so src/server.ts can 308 it to the canonical www host.
+  "routes": [
+    { "pattern": "www.uncensoredaieditor.com", "custom_domain": true },
+    { "pattern": "uncensoredaieditor.com", "custom_domain": true },
+  ],
   "vars": {
     "DATABASE_PROVIDER": "d1",
     // Server-side runtime fallbacks for the build-time VITE_* values — keep in
