@@ -31,7 +31,7 @@ type SeoCopy = {
 };
 
 const englishCopy: SeoCopy = {
-  stepsTitle: 'How to Generate a Video With No Filter in 3 Steps',
+  stepsTitle: 'How to Generate an AI Video in 3 Steps',
   steps: [
     {
       title: '1. Start from a prompt or an image',
@@ -50,17 +50,16 @@ const englishCopy: SeoCopy = {
   imageEditorLabel: 'AI image editor',
   imageEditorAfter:
     '. Both tools use the same account and credit system, so you can move from a still image to an animated clip without changing workflows.',
-  promptsTitle: 'Prompts That Other Generators Refuse',
+  promptsTitle: 'Prompts Followed as You Wrote Them',
   promptsIntro:
-    'Many video tools rewrite or block prompts before they reach a model. This studio sends your motion direction as written, subject to applicable law and the rights you have to your inputs:',
+    'Your motion direction is sent to the model as written, so the result stays close to what you described. All prompts must follow our terms of service and applicable law, and you must have the rights to your inputs:',
   prompts: [
-    'adult, sensual, and mature themes handled as adult material rather than as an unexplained error',
-    'dark, horror, and fictional violent scenes',
-    'real-world posing, lighting, and camera language that filtered tools often flag',
-    'a frame you already approved in the image editor, animated instead of judged',
+    'detailed camera moves, pacing, and transitions',
+    'realistic posing, lighting, and cinematic camera language',
+    'a frame you already made in the image editor, brought to life with motion',
   ],
   ageNotice:
-    'You must be 18 or older to generate adult content, and you are responsible for what you upload and where you publish it.',
+    'You are responsible for what you upload and where you publish it.',
   controlsTitle: 'Motion and Camera Controls',
   controls: [
     {
@@ -85,16 +84,11 @@ const englishCopy: SeoCopy = {
       body: 'keep the image, change the motion, and compare takes side by side',
     },
   ],
-  comparisonTitle: 'AI Video Generator With No Filter vs. Filtered Generators',
+  comparisonTitle: 'Uncensored AI vs. Typical AI Video Generators',
   comparisonLeft: 'Uncensored AI',
-  comparisonRight: 'Typical filtered video generator',
+  comparisonRight: 'Typical AI video generator',
   comparisonRows: [
-    ['Motion prompt', 'Used as written', 'Rewritten, softened, or refused'],
-    [
-      'Adult and mature themes',
-      'Allowed for adults 18+',
-      'Blocked or silently downgraded',
-    ],
+    ['Motion prompt', 'Used as written', 'Often rewritten or simplified'],
     [
       'Starting point',
       'A prompt, an image, or a visual reference',
@@ -126,7 +120,7 @@ const englishCopy: SeoCopy = {
 };
 
 const chineseCopy: SeoCopy = {
-  stepsTitle: '无过滤 AI 视频生成器：3 步生成视频',
+  stepsTitle: '3 步生成 AI 视频',
   steps: [
     {
       title: '1. 从提示词或图片开始',
@@ -145,16 +139,15 @@ const chineseCopy: SeoCopy = {
   imageEditorLabel: 'AI 图片编辑器',
   imageEditorAfter:
     '中制作首帧。两个工具使用同一账户和积分系统，可以不切换工作流地把静态图片变成动态视频。',
-  promptsTitle: '让其他生成器拒绝的提示词也能保持原意',
+  promptsTitle: '按你写的提示词执行',
   promptsIntro:
-    '许多视频工具会在提示词送达模型前重写或拦截内容。本工作区会按原意传递动作方向，但你仍需遵守适用法律，并确认拥有输入素材的使用权：',
+    '你的动作描述会按原意传递给模型，让结果更贴近你的想法。所有提示词都必须遵守服务条款和适用法律，并确认拥有输入素材的使用权：',
   prompts: [
-    '面向成年人的成人、性感和成熟主题，不会被模糊地当成普通错误',
-    '以虚构方式描述的黑暗、恐怖和暴力场景',
-    '常被过滤工具误判的真实姿势、灯光和镜头语言',
-    '已经在图片编辑器中确认的画面，可以直接用于生成动作',
+    '细致的镜头运动、节奏和转场',
+    '真实的姿势、灯光和电影感镜头语言',
+    '已经在图片编辑器中做好的画面，可以直接让它动起来',
   ],
-  ageNotice: '生成成人内容必须年满 18 岁；你需要对上传内容和发布渠道负责。',
+  ageNotice: '你需要对上传内容和发布渠道负责。',
   controlsTitle: '动作与镜头控制',
   controls: [
     { label: '镜头运动', body: '推进、拉远、平移、环绕和手持镜头' },
@@ -170,12 +163,11 @@ const chineseCopy: SeoCopy = {
     },
     { label: '重新生成', body: '保留图片，只改变动作，并排比较不同版本' },
   ],
-  comparisonTitle: '无过滤 AI 视频生成器与传统过滤工具的区别',
+  comparisonTitle: 'Uncensored AI 与常见 AI 视频生成器的区别',
   comparisonLeft: 'Uncensored AI',
-  comparisonRight: '常见的过滤型视频生成器',
+  comparisonRight: '常见的 AI 视频生成器',
   comparisonRows: [
-    ['动作提示词', '按原意传递', '重写、弱化或拒绝'],
-    ['成人与成熟主题', '仅限 18 岁以上用户', '拦截或静默降级'],
+    ['动作提示词', '按原意传递', '常被改写或简化'],
     ['起始方式', '提示词、图片或视觉参考均可', '通常只支持文字'],
     ['一致性', '可以用输入图片控制脸部和构图', '不同次生成的构图可能漂移'],
     [

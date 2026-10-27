@@ -59,9 +59,9 @@ function faqSections(locale: 'en' | 'zh'): FaqSection[] {
       {
         items: [
           {
-            question: '这是无过滤的 AI 视频生成器吗？',
+            question: '提示词会被改写吗？',
             answer:
-              '我们不会改写或弱化你的动作提示词，也不会因为成人、黑暗或非传统主题直接拒绝。生成成人内容必须年满 18 岁，你需要遵守所在地法律以及发布平台规则。',
+              '不会。我们会按原意使用你的动作提示词。所有内容都必须遵守服务条款、所在地法律以及发布平台规则。',
           },
           {
             question: '应该选择哪种生成模式？',
@@ -131,9 +131,9 @@ function faqSections(locale: 'en' | 'zh'): FaqSection[] {
     {
       items: [
         {
-          question: 'Is this AI video generator really unfiltered?',
+          question: 'Will my prompt be rewritten?',
           answer:
-            'We do not rewrite or soften your motion prompts, and we do not directly refuse adult, dark, or unconventional themes. You must be 18 or older to generate adult content and must follow the laws of your country and the rules of the platform where you publish it.',
+            'No. Your motion prompt is used as written. All content must follow our terms of service, the laws of your country, and the rules of the platform where you publish it.',
         },
         {
           question: 'Which mode should I choose?',
