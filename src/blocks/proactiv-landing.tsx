@@ -358,6 +358,7 @@ export function ProactivLanding() {
         loginLabel={m['common.nav.get_started']()}
         loginHref="/sign-in"
         settingsLabel={m['common.nav.settings']()}
+        adminLabel={m['common.systems.admin']()}
         signOutLabel={m['common.sign.sign_out_title']()}
       />
       <main className="pt-24">

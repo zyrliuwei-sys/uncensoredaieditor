@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { ArrowRight, LogOut, Menu, Settings, X } from 'lucide-react';
+import { ArrowRight, LogOut, Menu, Settings, Shield, X } from 'lucide-react';
 import { AnimatePresence, m, useReducedMotion } from 'motion/react';
 
 import { signOut, useSession } from '@/core/auth/client';
 import { Link, useRouter } from '@/core/i18n/navigation';
 import { localizeHref } from '@/paraglide/runtime.js';
+import { useUserPermissions } from '@/hooks/use-user-permissions';
 import { BrandWordmark } from '@/components/brand-wordmark';
 import {
   DropdownMenu,
@@ -30,6 +31,7 @@ export interface ProactivNavProps {
   loginLabel?: string;
   loginHref?: string;
   settingsLabel?: string;
+  adminLabel?: string;
   signOutLabel?: string;
 }
 
@@ -48,6 +50,7 @@ export function ProactivNav({
   loginLabel = 'Login',
   loginHref = '/sign-in',
   settingsLabel = 'Settings',
+  adminLabel = 'Admin',
   signOutLabel = 'Sign out',
 }: ProactivNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -94,6 +97,7 @@ export function ProactivNav({
                 name={session?.user?.name || session?.user?.email || ''}
                 email={session?.user?.email || ''}
                 settingsLabel={settingsLabel}
+                adminLabel={adminLabel}
                 signOutLabel={signOutLabel}
               />
             </div>
@@ -155,6 +159,7 @@ export function ProactivNav({
                       name={session?.user?.name || session?.user?.email || ''}
                       email={session?.user?.email || ''}
                       settingsLabel={settingsLabel}
+                      adminLabel={adminLabel}
                       signOutLabel={signOutLabel}
                     />
                   </div>
@@ -176,6 +181,7 @@ function AccountLink({
   name,
   email,
   settingsLabel,
+  adminLabel,
   signOutLabel,
   onClick,
 }: {
@@ -186,6 +192,7 @@ function AccountLink({
   name: string;
   email: string;
   settingsLabel: string;
+  adminLabel: string;
   signOutLabel: string;
   onClick?: () => void;
 }) {
@@ -214,6 +221,7 @@ function AccountLink({
       name={name}
       onClick={onClick}
       settingsLabel={settingsLabel}
+      adminLabel={adminLabel}
       signOutLabel={signOutLabel}
     />
   );
@@ -226,6 +234,7 @@ function SignedInAccountMenu({
   name,
   onClick,
   settingsLabel,
+  adminLabel,
   signOutLabel,
 }: {
   email: string;
@@ -234,9 +243,12 @@ function SignedInAccountMenu({
   name: string;
   onClick?: () => void;
   settingsLabel: string;
+  adminLabel: string;
   signOutLabel: string;
 }) {
   const router = useRouter();
+  const { data: permissions } = useUserPermissions();
+  const isAdmin = permissions?.isAdmin === true;
 
   async function handleSignOut() {
     await signOut();
@@ -270,6 +282,12 @@ function SignedInAccountMenu({
           <Settings className="size-4" aria-hidden="true" />
           {settingsLabel}
         </DropdownMenuItem>
+        {isAdmin && (
+          <DropdownMenuItem render={<Link href="/admin" />} onClick={onClick}>
+            <Shield className="size-4" aria-hidden="true" />
+            {adminLabel}
+          </DropdownMenuItem>
+        )}
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive" onClick={handleSignOut}>
           <LogOut className="size-4" aria-hidden="true" />
